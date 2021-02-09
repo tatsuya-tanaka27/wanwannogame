@@ -7,10 +7,14 @@
  
  ![Demo Image 1](img/daibouken.png)
  ![Demo Image 2](img/battle.png)
+ ![Demo Image 3](img/piyopiyotobashi.png)
  
  # Features
  
- 妻が描いてくれたキャラクター達が可愛いので是非、見てみてください。
+ わんわんのだいぼうけんというゲームは  
+ 不思議なダンジョンとドラクエ風バトルを混ぜ合わせた  
+ 製作時間70時間以上かけた大作になっていますので、是非、やってみて欲しいです。  
+ また、 妻が描いてくれたキャラクター達が可愛いので是非、見てみてください。
  
  # Requirement
  
