@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+			rel="stylesheet"
+		/>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<title>わんわんのめいろ</title>
+	</head>
+	<body>
+		<!-- 画像読み込み遅延防止のため、あらかじめ画像を読み込んでおく -->
+		<div id="hidden_img_area" style="display: none">
+			<img src="img/inu32.png">
+			<img src="img/neko32.png">
+			<img src="img/unchi32.png">
+			<img src="img/funyafunya32.png">
+			<img src="img/inu_kirakira32.png">
+			<img src="img/neko_kirakira32.png">
+			<img src="img/michi32.png" />
+			<img src="img/kusa32.png" />
+		</div>
+		<div id="wrapper">
+			<main>
+				<section id="message-area">
+					<div id="title-area">
+						<h1 class="wf-nikukyu">わんわんのめいろ</h1>
+					</div>
+					<div id="description-area">
+						<h2 class="wf-nicomoji">このゲームのせつめいをしますわん</h2>
+						<p class="wf-nicomoji" id="description">
+							かのじょのにゃんにゃんとデートしてたら<br />
+							なんと、はぐれちゃったわん！<br />
+							あいするにゃんにゃんにはやくあいたいので<br />
+							このめいろをクリアして<br />
+							にゃんにゃんのところにいくわん！
+						</p>
+						<h2 class="wf-nicomoji">そうさせつめいですわん</h2>
+						<div id="middle-area">
+							<div id="character-area" class="wf-nicomoji">
+								<figure class="tooltip">
+									<img src="img/inu32.png" alt="わんわん" />
+									<div class="tooltip-text">わんわん</div>
+									<figcaption>
+										わんわんをほうこうキーでそうさするんだわん。
+									</figcaption>
+								</figure>
+								<br />
+								<figure class="tooltip">
+									<img src="img/neko32.png" alt="にゃんにゃん" />
+									<div class="tooltip-text">にゃんにゃん</div>
+									<figcaption>
+										にゃんにゃんのとこについたらごーるだわん。
+									</figcaption>
+								</figure>
+								<br />
+								<figure class="tooltip">
+									<img src="img/unchi32.png" alt="うんち" />
+									<div class="tooltip-text">うんち</div>
+									<figcaption>
+										うんちはくさいので、さわっちゃたらすたーとからやりなおしだわん。
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<div id="bottom-area">
+							<div id="other-area">
+								＜参考サイト＞<br />
+								<a
+									href="https://original-game.com/introduction-to-javascript-character-move-on-map/"
+								>
+									小学生からのプログラミング入門
+								</a>
+								<br />
+								<br />
+								＜当画面で流れるBGMの著作権＞<br />
+								<small
+									>ほんわかわっしょい © 2017 MoppySound. All Rights
+									Reserved.</small
+								>	
+							</div>
+							<div id="guide-area">
+								<figure class="tooltip-push">
+									<img src="img/bgm70.png" id="bgm" onclick="bgm()" alt="おんがく"/>
+									<div class="tooltip-push-text">BGMの再生/停止を行います</div>
+								</figure>
+								<figure class="tooltip-push">
+									<img src="img/back70.png" id="back" onclick="back()" alt="もどる"/>
+									<div class="tooltip-push-text">わんわんのゲーム画面に戻ります</div>
+								</figure>
+							</div>
+
+							<!-- エンディング用オーバーレイ画面 -->
+							<div id="overlay_end">
+								<div id="overlayWindow_end">
+									<div id="end-screen">
+										<figure id="end-area">
+											<img src="img/end1_400.png" alt="エンディング１"/>
+											<figcaption class="wf-nicomoji" id="end-message">
+												ゲームクリアおめでとうわん！！
+											</figcaption>
+										</figure>
+									</div>
+									<div id="end-other-area">
+										<br />
+										＜当画面で流れるBGMの著作権＞<br />
+										<small>
+											ゆるっとぽかぽか © 2021 zmino(ずみのー) All Rights	Reserved.
+										</small>
+									</div>
+								</div>
+							</div>
+
+						</div>
+				</section>
+				<section id="canvas-area">
+					<canvas id="canvas"></canvas>
+				</section>
+				<audio id="audio" preload="none" autoplay="autoplay" loop="loop">
+					<source src="bgm/honwakawasshoi.mp3" type="audio/mp3" />
+					<code>audio</code>
+				</audio>
+				<audio id="audio_end" preload="none" autoplay="autoplay" loop="loop">
+					<source src="bgm/yuruttopokapoka.mp3" type="audio/mp3" />
+					<code>audio</code>
+				</audio>
+				<script type="text/javascript" src="js/script.js"></script>
+			</main>
+		</div>
+	</body>
+</html>

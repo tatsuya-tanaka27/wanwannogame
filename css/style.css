@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/* 外部スタイル start */
+.wf-nikukyu {
+	font-family: "Nikukyu";
+}
+.wf-nicomoji {
+	font-family: "Nico Moji";
+}
+
+/* 外部スタイル end */
+
+#wrapper {
+	margin: auto;
+	width: 100%;
+}
+
+main {
+	display: flex;
+	margin: auto;
+	width: 100%;
+}
+
+#game-area {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+#top-area {
+	display: flex;
+}
+
+#slide-area {
+	width: 20%;
+}
+
+#slide-show-area {
+	border: 3px solid pink;
+	height: 200px;
+	background-color: lemonchiffon;
+}
+
+#slide-img-message {
+	font-size: 20px;
+	color: green;
+}
+
+#center-area {
+	width: 56%;
+}
+
+#title-area {
+	display: flex;
+	margin: auto;
+	width: 81%;
+}
+
+#summary-area {
+	width: 24%;
+}
+
+#summary-table-border {
+	width: 95%;
+	margin: 0px 0px 0px -20px;
+	border: 3px solid green;
+}
+
+#summary-table-label {
+	color: green;
+}
+
+#summary-table {
+	margin: auto;
+	border: solid 1px black;
+	width: 100%;
+}
+
+#summary-table th {
+	width: 40%;
+	border: solid 1px black;
+	background-color: #deffff;
+}
+
+#summary-table td {
+	border: solid 1px black;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#title-area img {
+	margin-top: -20px;
+}
+
+h1 {
+	color: pink;
+	font-size: 50px;
+	margin-top: -15px;
+	text-align: center;
+}
+
+h2 {
+	color: brown;
+	font-size: 35px;
+	margin: -5px 0px 5px 0px;
+}
+
+#description {
+	color: aqua;
+	font-size: 25px;
+	margin: 0px;
+	width: 100%;
+}
+
+#red-description {
+	color: red;
+	font-size: 25px;
+	margin: 0px;
+}
+
+#table-border {
+	width: 97%;
+	margin: -20px auto 0px auto;
+	border: 3px solid royalblue;
+}
+
+#table-label {
+	font-size: 30px;
+	color: rgb(0, 111, 191);
+	margin-bottom: 10px;
+}
+
+#game-table {
+	margin: auto;
+	border: solid 1px black;
+	width: 100%;
+}
+
+#game-table th {
+	width: 22%;
+	border: solid 1px black;
+	background-color: #deffff;
+}
+
+.game-title {
+	font-size: 20px;
+}
+
+#game-table td {
+	border: solid 1px black;
+	text-align: left;
+	vertical-align: middle;
+}
+
+/* スライドショーの矢印用のスタイル start */
+
+/* コンテントなくてもボーダー太ければ表示される*/
+#left {
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	border-top: 25px solid transparent;
+	border-right: 25px solid greenyellow;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid transparent;
+	margin-left: -15px;
+}
+
+#left:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+/* コンテントなくてもボーダー太ければ表示される*/
+#right {
+	position: absolute;
+	top: 100px;
+	left: 230px;
+	border-top: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid greenyellow;
+}
+
+#right:hover {
+	cursor: pointer;
+}
+
+#slide-controll-area {
+	width: 100%;
+}
+
+#slide-controll {
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+}
+
+#slide-controll > li {
+	cursor: pointer;
+	display: list-item;
+	width: 10px;
+	height: 10px;
+}
+
+#slide-controll li:hover {
+	opacity: 0.3;
+}
+
+/* スライドショーの矢印用のスタイル end */

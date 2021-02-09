@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>わんわんのぴよぴよとばし</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+			rel="stylesheet"
+		/>
+		<script src="js/jquery-3.5.1.min.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<main>
+				<!-- ガイドエリア -->
+				<section id="message-area">
+					<div id="title-area">
+						<h1 class="wf-nikukyu">わんわんのぴよぴよとばし</h1>
+					</div>
+					<div id="description-area">
+						<h2 class="wf-nicomoji">このゲームのせつめいをしますわん</h2>
+						<p class="wf-nicomoji" id="description">
+							あいぼうのぴよぴよといつものもりにあそびにきたわん！<br />
+							わんわんをくりっくしたらげーむがはじまりますわん！
+						</p>
+						<div id="middle-area">
+							<div id="character-area" class="wf-nicomoji">
+								<figure class="tooltip">
+									<img src="img/inu32.png" alt="わんわん" />
+									<div class="tooltip-text">わんわん</div>
+									<figcaption>
+										→のもりのなかでをまうすそうさすると、わんわんがよこにうごきますわん。
+									</figcaption>
+								</figure>
+								<br />
+								<figure class="tooltip">
+									<img src="img/hiyoko_kirakira32.png" alt="ぴよぴよ" />
+									<div class="tooltip-text">ぴよぴよ</div>
+									<figcaption>
+										わんわんをぶつけてぴよぴよをとばすんだわん。<br />
+										ぴよぴよをしたにおとすとわんわんのげんきがへってしまうわん。
+									</figcaption>
+								</figure>
+							</div>
+						</div>
+						<form>
+							<div id="table-area">
+								<fieldset id="table-border">
+									<legend id="table-label" class="wf-nikukyu">
+										すこあとれべるせってい
+									</legend>
+									<table id="game-table" class="wf-nicomoji">
+										<tr>
+											<th>れべる</th>
+											<td>
+												<select id="lebel">
+													<option value="100" selected>しょきゅう</option>
+													<option value="70">ちゅうきゅう</option>
+													<option value="50">じょうきゅう</option>
+												</select>
+											</td>
+											<td>れべるをあげるとむずかしくなるわん。</td>
+										</tr>
+										<tr>
+											<th>げんき</th>
+											<td>
+												<input type="text" size="10" id="genki" readonly />
+											</td>
+											<td>げんきなくなるとげーむおーばーだわん。</td>
+										</tr>
+										<tr>
+											<th>とくてん</th>
+											<td>
+												<input type="text" size="10" id="tokuten" readonly />
+											</td>
+											<td>とくてんだわん。</td>
+										</tr>
+										<tr>
+											<th>さいこうとくてん</th>
+											<td>
+												<input
+													type="text"
+													size="10"
+													id="saikou"
+													value="0"
+													readonly
+												/>
+												<!-- hidden用 -->
+												<input type="hidden" id="syokyuu" value="0" />
+												<input type="hidden" id="tyukyuu" value="0" />
+												<input type="hidden" id="jyoukyuu" value="0" />
+											</td>
+											<td>かくれべるごとのさいこうとくてんだわん。</td>
+										</tr>
+									</table>
+								</fieldset>
+							</div>
+						</form>
+						<div id="bottom-area">
+							<div id="other-area">
+								＜参考ソース＞<br />
+								北関東学院：WEBプログラミングデザイン科で使用したテニスゲーム
+								<br />
+								<br />
+								＜当画面で流れるBGMの著作権＞<br />
+								<small
+									>どたばたコミック！ © 2017 MAKOOTO(マクート) All Rights
+									Reserved.</small
+								>
+							</div>
+							<div id="guide-area">
+								<figure class="tooltip-push">
+									<img
+										src="img/bgm70.png"
+										id="bgm"
+										onclick="bgm()"
+										alt="おんがく"
+									/>
+									<div class="tooltip-push-text">BGMの再生/停止を行います</div>
+								</figure>
+								<figure class="tooltip-push">
+									<img
+										src="img/back70.png"
+										id="back"
+										onclick="back()"
+										alt="戻る"
+									/>
+									<div class="tooltip-push-text">
+										わんわんのゲーム画面に戻ります
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ゲームエリア -->
+				<section id="game-area">
+					<img id="mori" src="img/mori_square550.png" alt="もり" />
+					<img id="hiyoko" src="img/hiyoko_kirakira80.png" alt="ひよこ" />
+					<img id="inu" src="img/inu120.png" alt="わんわん" />
+				</section>
+			</main>
+		</div>
+		<audio id="audio" preload="none" autoplay="autoplay" loop="loop">
+			<source src="bgm/dotabatakomikku.mp3" type="audio/mp3" />
+			<code>audio</code>
+		</audio>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

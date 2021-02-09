@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/overlay.js"></script>
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+			rel="stylesheet"
+		/>
+		<title>わんわんのだいぼうけん</title>
+	</head>
+	<body>
+		<!-- 画像読み込み遅延防止のため、あらかじめ画像を読み込んでおく -->
+		<div id="hidden_img_area" style="display: none">
+			<img src="img/inu32.png" />
+			<img src="img/neko32.png" />
+			<img src="img/unchi32.png" />
+			<img src="img/norainu_navy32.png" />
+			<img src="img/norainu_purple32.png" />
+			<img src="img/norainu_green32.png" />
+			<img src="img/bossinu36.png" />
+			<img src="img/niku32.png" />
+			<img src="img/softcream32.png" />
+			<img src="img/hone_red32.png" />
+			<img src="img/hone_green32.png" />
+			<img src="img/hone_blue32.png" />
+			<img src="img/kubiwa_red32.png" />
+			<img src="img/kubiwa_green32.png" />
+			<img src="img/kubiwa_blue32.png" />
+			<img src="img/golden_niku32.png" />
+			<img src="img/chocosoft32.png" />
+			<img src="img/funyafunya32.png" />
+			<img src="img/inu_kirakira32.png" />
+			<img src="img/neko_kirakira32.png" />
+			<img src="img/inu_hone_red32.png" />
+			<img src="img/inu_hone_green32.png" />
+			<img src="img/inu_hone_blue32.png" />
+			<img src="img/michi32.png" />
+			<img src="img/kaidan32.png" />
+			<img src="img/renga32_1.png" />
+			<img src="img/renga32_2.png" />
+			<img src="img/renga32_3.png" />
+			<img src="img/renga32_4.png" />
+		</div>
+		<div id="wrapper">
+			<main>
+				<!-- メッセージエリア -->
+				<section id="message-area">
+					<div id="title-area">
+						<h1 class="wf-nikukyu">わんわんのだいぼうけん</h1>
+					</div>
+					<div id="description-area">
+						<h2 class="wf-nicomoji">このゲームのせつめいをしますわん</h2>
+						<p class="wf-nicomoji" id="description">
+							またまた、たいへんだわん！<br />
+							にゃんにゃんがのらいぬたちのぼすにさらわれちゃったわん！<br />
+							ぼすのあじとにのりこんで、にゃんにゃんをたすけにいくわん！<br />
+							こんかいはわんわんがたたかうのでしっかりそうさするわん！
+						</p>
+						<div id="middle-area">
+							<h3 id="overlay-link" class="wf-nicomoji">
+								<img
+									src="img/nikukyuu_off32.png"
+								/>そうさせつめいをみたいときはここをくりっくするわん
+							</h3>
+						</div>
+						<form>
+							<div id="battlelog-area">
+								<h3 id="battlelog-title" class="wf-nicomoji">⚔ばとるろぐ⚔</h3>
+								<textarea id="battlelog" size="80" readonly></textarea>
+								<div id="status-area">
+									<img src="img/inu_stand16.png" alt="わんわん" />
+									<span>HP:</span>
+									<input id="hp" type="text" value="" size="2" readonly />
+									<span>攻撃力:</span>
+									<input id="atk" type="text" value="" size="2" readonly />
+									<span>防御力:</span>
+									<input id="def" type="text" value="" size="2" readonly />
+								</div>
+							</div>
+						</form>
+						<div id="bottom-area">
+							<div id="other-area">
+								＜参考サイト＞<br />
+								<a
+									href="https://original-game.com/introduction-to-javascript-character-move-on-map/"
+								>
+									小学生からのプログラミング入門
+								</a>
+								<br />
+								<br />
+								＜当画面で流れるBGMの著作権＞<br />
+								<small
+									>火の大剣 © 2020 MAKOOTO(マクート) All Rights Reserved.</small
+								>
+							</div>
+							<div id="guide-area">
+								<figure class="tooltip-push">
+									<img
+										src="img/bgm70.png"
+										id="bgm"
+										onclick="bgm()"
+										alt="おんがく"
+									/>
+									<div class="tooltip-push-text">BGMの再生/停止を行います</div>
+								</figure>
+								<figure class="tooltip-push">
+									<img
+										src="img/back70.png"
+										id="back"
+										onclick="back()"
+										alt="戻る"
+									/>
+									<div class="tooltip-push-text">
+										わんわんのゲーム画面に戻ります
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+
+					<!-- オーバーレイ画面 -->
+					<div id="overlay">
+						<div id="overlayWindow">
+							<fieldset id="table-border">
+								<legend id="table-label" class="wf-nicomoji">
+									キャラクターしょうかい
+								</legend>
+								<table id="game-table">
+									<tr>
+										<th><img src="img/inu32.png" alt="わんわん" /></th>
+										<td>
+											このゲームの主人公であるわんわんを方向キーで操作します。
+											のんびり屋でマイペースなわんこです。
+											わんわんが敵に接触する、または敵からわんわんに接触されると戦闘が発生します。
+											わんわんのHPが0になるとゲームオーバーになってしまうので、気を付けてください。
+										</td>
+										<th><img src="img/neko32.png" alt="にゃんにゃん" /></th>
+										<td>
+											このゲームのヒロインであるにゃんにゃんはぼすにさらわれてしまいます。
+											わんわんがにゃんにゃんのところに到着するとゲームクリアとなります。
+											しっかりものな女の子で、のんびり屋なわんわんをいつもサポートしています。
+										</td>
+									</tr>
+									<tr>
+										<th><img src="img/bossinu40.png" alt="ぼす" /></th>
+										<td>
+											のらいぬたちのリーダーであるぼす。
+											じつはにゃんにゃんに惚れていたので、にゃんにゃんをさらっていってしまう。
+											身体がでかくて、性格も荒くれていて、喧嘩がとても強い大型犬です。
+											わんわんがこのぼすを倒すことで、ゲームクリアとなります。
+											ものすごく強いので、各階にある装備とアイテムはできるだけ拾って、
+											わんわんを強くしましょう。
+										</td>
+										<th>
+											<img src="img/norainu_navy32.png" alt="のらいぬ紺" />
+											<img src="img/norainu_purple32.png" alt="のらいぬ紫" />
+											<img src="img/norainu_green32.png" alt="のらいぬ緑" />
+										</th>
+										<td>
+											わんわんの邪魔をしてくるのらいぬ達です。<br />
+											のらいぬ紺：固定移動型のあまり強くないのらいぬです。<br />
+											のらいぬ紫：ランダム移動型でちょっと強いのらいぬです。<br />
+											のらいぬ緑：固定移動型とランダム型の両方がおり、かなり強いのらいぬです。
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+							<fieldset id="table-border">
+								<legend id="table-label" class="wf-nicomoji">
+									アイテムしょうかい
+								</legend>
+								<table id="game-table">
+									<tr>
+										<th>
+											<img src="img/hone_red32.png" alt="くびわ赤" />
+											<img src="img/hone_green32.png" alt="くびわ緑" />
+											<img src="img/hone_blue32.png" alt="くびわ青" />
+										</th>
+										<td>
+											武器となるほねそーどを拾うことで、わんわんの攻撃力があがります。<br />
+											ふつうのほねそーど：攻撃力+1<br />
+											かっこいいほねそーど：攻撃力+2<br />
+											でんせつのほねそーど：攻撃力+3
+										</td>
+										<th>
+											<img src="img/kubiwa_red32.png" alt="くびわ赤" />
+											<img src="img/kubiwa_green32.png" alt="くびわ緑" />
+											<img src="img/kubiwa_blue32.png" alt="くびわ青" />
+										</th>
+										<td>
+											防具となるくびわを拾うことで、わんわんの防御力があがります。<br />
+											ふつうのくびわ：防御力+1<br />
+											かっこいいくびわ：防御力+2<br />
+											でんせつのくびわ：防御力+3
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<img src="img/softcream32.png" alt="ソフトクリーム" />
+											<img src="img/niku32.png" alt="にく" />
+										</th>
+										<td>
+											ソフトクリームとほねつきにくはわんわんの大好物な食べ物です。<br />
+											ソフトクリーム：HPが全回復します。<br />
+											ほねつきにく：最大HPを2上げて、HPを全回復します。
+										</td>
+										<th>
+											<img src="img/unchi32.png" alt="うんち" />
+											<img src="img/kaidan32.png" alt="かいだん" />
+										</th>
+										<td>
+											わんわんが触ったら、特殊なアクションが発動するオブジェクトです。<br />
+											うんち：くさいので、今いる階のスタート位置に戻ってしまいます。<br />
+											階段：下の階に移動します。下りたら、上の階には戻れません。
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+							<div id="close_button">
+								<img src="img/tojiru30.png" alt="とじる" />
+								<span class="wf-nicomoji" id="close_message">
+									せつめいのがめんをとじたいときはここをくりっくするわん
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- ドラクエ風バトル画面オーバーレイ用 -->
+					<div id="overlay_game">
+						<div id="overlayWindow_game">
+							<div id="game-area">
+								<div id="left-area">
+									<figure>
+										<img src="img/inu_battle200.png" alt="左わんわん" />
+										<figcaption
+											class="wf-nicomoji"
+											style="color: blue; font-size: 24px"
+										>
+											にゃんにゃんをたすけるわん！
+										</figcaption>
+									</figure>
+								</div>
+								<div id="game_window">
+									<div id="enemy_area">
+										<div id="enemy_name">ぼす</div>
+										<div class="game_enemy">
+											<img src="img/bossinu150.png" alt="ぼすばとる" />
+										</div>
+									</div>
+									<div id="command_area">
+										<div class="game_menu">
+											<div id="menu1" onclick="activeMenu(1);" class="menu">
+												たたかう
+											</div>
+											<div id="menu2" onclick="activeMenu(2);" class="menu">
+												ふせ
+											</div>
+											<div id="menu3" onclick="activeMenu(3);" class="menu">
+												ぺろぺろ
+											</div>
+											<div id="menu4" onclick="activeMenu(4);" class="menu">
+												ほえる
+											</div>
+										</div>
+										<div id="message">
+											<span class="message"></span>
+										</div>
+									</div>
+									<div id="player_area">
+										<div id="player_status">
+											<span>わんわん</span><br />
+											<span>HP：</span><span id="battle_hp"></span><br />
+											<span>MP：</span><span id="mp"></span><br />
+											<span>てんしょん：</span><span id="tenshon"></span>
+										</div>
+									</div>
+								</div>
+								<div id="right-area">
+									<figure>
+										<img src="img/neko_shimpai200.png" alt="右にゃんにゃん" />
+										<figcaption
+											class="wf-nicomoji"
+											style="color: pink; font-size: 24px"
+										>
+											わんわん、きをつけてにゃん！
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+							<div id="user-area">
+								<div id="game-guide-area">
+									<fieldset id="boss-table-border">
+										<legend id="boss-table-label" class="wf-nicomoji">
+											ぼすばとるのせつめいだわん
+										</legend>
+										<span>
+											ぼすとは、ドラクエ風のバトルで戦います。
+											操作は方向キーとエンターキー、もしくは、
+											画面にあるコマンドを直接２回クリックすると
+											わんわんがコマンドを実行します。
+											たたかう以外のコマンドも上手く活用するのがコツです。
+										</span>
+									</fieldset>
+								</div>
+								<div id="game-other-area">
+									<br />
+									＜参考サイト＞<br />
+									<a href="https://blog.ver001.com/javascript-keydown/">
+										JavaScriptでキー入力を判別してドラクエ風の戦闘画面を作ってみる
+									</a>
+									<br />
+									<br />
+									＜当画面で流れるBGMの著作権＞<br />
+									<small
+										>The End of Destruction © 2019 ISAo(イサオ) All Rights
+										Reserved.</small
+									>
+								</div>
+								<div id="command-guide-area">
+									<fieldset id="boss-table-border">
+										<legend id="boss-table-label" class="wf-nicomoji">
+											こまんどのせつめいだわん
+										</legend>
+										<table id="boss-table">
+											<tr>
+												<th>たたかう</th>
+												<td>ぼすに攻撃する</td>
+											</tr>
+											<tr>
+												<th>ふせ</th>
+												<td>防御してダメージを減らす</td>
+											</tr>
+											<tr>
+												<th>ぺろぺろ</th>
+												<td>MPを3消費してHP回復する</td>
+											</tr>
+											<tr>
+												<th>ほえる</th>
+												<td>MPを5消費してﾃﾝｼｮﾝを上げる</td>
+											</tr>
+										</table>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- エンディング用オーバーレイ画面 -->
+					<div id="overlay_end">
+						<div id="overlayWindow_end">
+							<div id="end-screen">
+								<figure id="end-area">
+									<img src="img/end3_400.png" alt="エンディング３" />
+									<figcaption class="wf-nicomoji" id="end-message">
+										ゲームクリアおめでとうわん！！
+									</figcaption>
+								</figure>
+							</div>
+							<div id="end-other-area">
+								<br />
+								＜当画面で流れるBGMの著作権＞<br />
+								<small>
+									ゆるっとぽかぽか © 2021 zmino(ずみのー) All Rights Reserved.
+								</small>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- キャンバス -->
+				<section id="canvas-area">
+					<canvas id="canvas"></canvas>
+				</section>
+				<!-- BGM -->
+				<audio id="audio" preload="metadata" loop="loop">
+					<source src="bgm/hinodaiken.mp3" type="audio/mp3" />
+					<code>audio</code>
+				</audio>
+				<audio id="audio_boss" preload="metadata" loop="loop">
+					<source src="bgm/The_End_of_Destruction.mp3" type="audio/mp3" />
+					<code>audio</code>
+				</audio>
+				<audio id="audio_end" preload="none" autoplay="autoplay" loop="loop">
+					<source src="bgm/yuruttopokapoka.mp3" type="audio/mp3" />
+					<code>audio</code>
+				</audio>
+				<!-- ゲームスクリプト -->
+				<script type="text/javascript" src="js/script.js"></script>
+			</main>
+		</div>
+	</body>
+</html>

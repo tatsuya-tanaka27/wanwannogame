@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+/* 外部スタイル start */
+.wf-nikukyu {
+	font-family: "Nikukyu";
+}
+.wf-nicomoji {
+	font-family: "Nico Moji";
+}
+
+/* 外部スタイル end */
+
+/* わんわんのぴよぴよとばし用スタイル start */
+
+body {
+	background-color: lightcyan;
+}
+
+#mori {
+	position: absolute;
+	right: 50px;
+	top: 10px;
+}
+
+#inu {
+	position: absolute;
+	right: 250px;
+	top: 440px;
+}
+
+#hiyoko {
+	position: absolute;
+	right: 250px;
+	top: 10px;
+}
+
+#wrapper {
+	margin: auto;
+}
+
+main {
+	display: flex;
+}
+
+h1 {
+	color: pink;
+	font-size: 50px;
+	margin-top: -15px;
+}
+
+h2 {
+	color: brown;
+	font-size: 35px;
+	margin: -10px 0px 10px 0px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+#description {
+	color: green;
+	font-size: 25px;
+	margin: 0px;
+}
+
+#description-area {
+	width: 100%;
+}
+
+#message-area {
+	width: 50%;
+}
+
+#game-area {
+	width: 50%;
+}
+
+#middle-area {
+	margin: 10px auto;
+}
+
+#bottom-area {
+	display: flex;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#other-area {
+	width: 100%;
+}
+
+figure {
+	display: flex;
+	align-items: center;
+	margin-left: 0px;
+	font-weight: bold;
+	font-size: 20px;
+	margin: -7px auto;
+}
+
+#back:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#bgm:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.tooltip {
+	position: relative;
+	cursor: pointer;
+}
+
+.tooltip:hover .tooltip-text {
+	opacity: 1;
+	visibility: visible;
+}
+
+.tooltip-text {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 4%;
+	transform: translateX(-50%);
+	bottom: 30px;
+	display: block;
+	padding: 5px;
+	white-space: nowrap;
+	font-size: 14px;
+	line-height: 1.3;
+	background: white;
+	color: black;
+	border-radius: 3px;
+	transition: 0.3s ease-in;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-text :before {
+	content: "";
+	position: absolute;
+	top: -13px;
+	left: 50%;
+	margin-left: -7px;
+	border: 7px solid transparent;
+	border-bottom: 7px solid #333;
+}
+
+.tooltip-push {
+	position: relative;
+	cursor: pointer;
+}
+
+.tooltip-push:hover .tooltip-push-text {
+	opacity: 1;
+	visibility: visible;
+}
+
+.tooltip-push-text {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 4%;
+	transform: translateX(-50%);
+	bottom: 60px;
+	display: block;
+	padding: 5px;
+	white-space: nowrap;
+	font-size: 14px;
+	line-height: 1.3;
+	background: white;
+	color: black;
+	border-radius: 3px;
+	transition: 0.3s ease-in;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-push-text :before {
+	content: "";
+	position: absolute;
+	top: -13px;
+	left: 50%;
+	margin-left: -7px;
+	border: 7px solid transparent;
+	border-bottom: 7px solid #333;
+}
+
+#table-area {
+	display: flex;
+}
+
+#table-border {
+	width: 100%;
+	margin: 10px auto 10px 0px;
+	border: 3px solid royalblue;
+}
+
+#table-label {
+	font-size: 20px;
+	color: rgb(0, 111, 191);
+	margin-bottom: 10px;
+}
+
+#game-table {
+	margin: auto;
+	border: solid 1px black;
+	width: 100%;
+}
+
+#game-table th {
+	width: 20%;
+	border: solid 1px black;
+	background-color: greenyellow;
+}
+
+#game-table td {
+	border: solid 1px black;
+	text-align: left;
+	vertical-align: middle;
+	background-color: white;
+	color: yellowgreen;
+}
+
+/* わんわんのぴよぴよとばし用スタイル end */

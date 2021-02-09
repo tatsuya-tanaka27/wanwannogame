@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="”description”"
+			content="”とあるおっさんプログラマーが自分のポートフォリオとして、JavascriptとHTMLだけでゲームを作ってみました。ゲームに登場するキャラクター達は妻に描いてもらいました。よかったら、javascriptでゲームを作る参考にしていただけたらなと思います。”"
+		/>
+		<meta
+			name="keywords"
+			content="Javascript,HTML,ゲーム,ポートフォリオ,RPG,わんわん"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nikukyu.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/earlyaccess/nicomoji.css"
+			rel="stylesheet"
+		/>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<title>わんわんのげーむ</title>
+	</head>
+	<body>
+		<!-- 画像読み込み遅延防止のため、あらかじめ画像を読み込んでおく -->
+		<div id="hidden_img_area" style="display: none">
+			<img class="hidden_img" src="img/inu120.png" alt="わんわん"/>
+			<img class="hidden_img" src="img/neko120.png" alt="にゃんにゃん"/>
+			<img class="hidden_img" src="img/hiyoko_kirakira80.png" alt="ぴよぴよ"/>
+			<img class="hidden_img" src="img/bossinu150.png" alt="ぼす"/>
+			<img class="hidden_img" src="img/softcream100.png" alt="そふとくん"/>
+			<img class="hidden_img" src="img/unchi100.png" alt="うんちくん"/>
+		</div>
+		<!-- トップ画面 -->
+		<div id="wrapper">
+			<main>
+				<section id="game-area">
+					<div id="top-area">
+						<div id="slide-area">
+							<div id='left' onclick='moveLeft()'></div>
+							<div id="slide-message">
+								<span class="wf-nicomoji" style="color: green; font-size: 20px;">
+									きゃらくたーしょうかいわん
+								</span>
+							</div>
+							<div id="slide-show-area">
+								<figure>
+									<img src="" id="slide-img">
+									<figcaption id="slide-img-message" class="wf-nicomoji">
+									</figcaption>
+								</figure>
+							</div>
+							<div id='right' onclick='moveRight()'></div>
+							<div  id="slide-controll-area">
+								<ul id="slide-controll">
+								</ul>
+							</div>
+						</div>
+						<div id="center-area">
+							<div id="title-area">
+								<img src="img/inu80.png" />
+								<h1 class="wf-nikukyu">わんわんのげーむ</h1>
+								<img src="img/neko80.png" />
+							</div>
+							<div id="description-area">
+								<h2 class="wf-nicomoji">
+									わんわんのゲームについてせつめいしますわん
+								</h2>
+								<p class="wf-nicomoji" id="description">
+									わんわんのゲームはわんわんがだいかつやくするゲームだわん！<br />
+									よかったらみんなにもやってもらいたいわん！<br />
+									やりたいゲームのタイトルをクリックしたらゲームがはじまるわん！
+								</p>
+								<span class="wf-nicomoji" id="red-description">
+									※ゲームをやるときはパソコンのがめんでフルサイズでやるんだわん！
+								</span>
+							</div>
+						</div>
+						<div id="summary-area">
+							<fieldset id="summary-table-border">
+							<legend id="summary-table-label">
+								作品概要
+							</legend>
+							<table id="summary-table">
+								<tr>
+									<th>								
+										creator
+									</th>
+									<td>
+										タナカソルジャー
+									</td>
+								</tr>
+								<tr>
+									<th>
+										language
+									</th>
+									<td>
+										Javascript,HTML5,CSS3
+									</td>
+								</tr>
+								<tr>
+									<th>
+										library
+									</th>
+									<td>
+										Jquery,canvas
+									</td>
+								</tr>
+								<tr>
+									<th>										
+										server
+									</th>
+									<td>
+										firebase
+									</td>
+								</tr>
+								<tr>
+									<th>							
+										illustrator
+									</th>
+									<td>
+										妻
+									</td>
+								</tr>
+								<tr>
+									<th>
+										version
+									</th>
+									<td>
+										1.0(初版)
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="table-area">
+						<fieldset id="table-border">
+							<legend id="table-label" class="wf-nikukyu">
+								わんわんのげーむ
+							</legend>
+							<table id="game-table">
+								<tr>
+									<th>
+										<a
+											class="wf-nikukyu game-title"
+											href="wanwannomeiro/wanwannomeiro.html"
+											>わんわんのめいろ</a
+										>
+									</th>
+									<td>
+										わんわんが彼女のにゃんにゃんのいるところを目指す迷路型のゲームです。<br />
+										難易度：かんたん&nbsp;&nbsp;推定クリア時間：２分
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<a
+											class="wf-nikukyu game-title"
+											href="wanwannobouken/wanwannobouken.html"
+											>わんわんのぼうけん</a
+										>
+									</th>
+									<td>
+										わんわんがのらいぬたちにさらわれたにゃんにゃんを探しにいきます。
+										邪魔をしてくるのらいぬ達を避けながら進む迷路型のゲームです。<br />
+										難易度：ふつう&nbsp;&nbsp;推定クリア時間：５分
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<a
+											class="wf-nikukyu game-title"
+											href="wanwannodaibouken/wanwannodaibouken.html"
+										>
+											わんわんのだいぼうけん
+										</a>
+									</th>
+									<td>
+										今度はのらいぬたちのぼすにさらわれてしまったにゃんにゃん。
+										ふたたび、にゃんにゃんを助けるため、わんわんはぼすのアジトにのりこみます。
+										今回は不思議なダンジョン風味の本格的なアクションRPGゲームとなっています。<br />
+										難易度：むずかしい&nbsp;&nbsp;推定クリア時間：２０分
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<a
+											class="wf-nikukyu game-title"
+											href="wanwannopiyopiyotobashi/wanwannopiyopiyotobashi.html"
+											>わんわんのぴよぴよとばし</a
+										>
+									</th>
+									<td>
+										わんわんが相棒のひよこであるぴよぴよをひたすら飛ばして遊ぶアクションゲームです。<br />
+										難易度：かんたん&nbsp;&nbsp;推定クリア時間：なし
+									</td>
+								</tr>
+							</table>
+						</fieldset>
+					</div>
+				</section>
+				<script type="text/javascript" src="js/script.js"></script>
+			</main>
+		</div>
+	</body>
+</html>
