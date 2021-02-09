@@ -13,18 +13,19 @@
  
  # Requirement
  
-  jquery-3.5.1.min.js
-  canvas
-  ※canvasはJavascriptとHTML5に内蔵されています。
+  jquery-3.5.1.min.js  
+  canvas  
+  ※canvasはJavascriptとHTML5に内蔵されています。  
   
   # Installation
   
-  jquery-3.5.1.min.jsのダウンロードページ
+  jquery-3.5.1.min.jsのダウンロードページ  
   https://jquery.com/download/
   
   # Usage
   
-  推奨環境：PCのChromで画面フルサイズである。また、HTML5が読み込めるブラウザであること。
+  推奨環境：PCのChromで画面フルサイズである。  
+  また、HTML5が読み込めるブラウザであること。
   
   # Author
   
